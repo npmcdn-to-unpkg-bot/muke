@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>li两边对齐</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width: 1080px;
+			background: yellow;
+			overflow: hidden;
+			margin:50px auto;
+		}
+		.clear:after,
+		.clear:before{
+			content: '';
+			display: table;
+		}
+		.clear:after{clear: both}
+		ul{background: red;width: 1140px;}
+		li{
+			float: left;
+			width: 320px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			margin-right: 60px;
+			background: pink;
+			list-style: none;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box clear">
+		<ul>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+	</div>
+</body>
+</html>

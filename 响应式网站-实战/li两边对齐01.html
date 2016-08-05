@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>li两边对齐</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		li{
+			list-style:none;
+		}
+		html{
+			font-size: 62.5%;
+		}
+		ul{
+			width: 100%;
+			background-color: pink;
+		}
+		li{
+			width: calc(33.33333333333333% - 1rem);    /*3rem= padding的左右2个rem 还有margin的1.5rem*2 = 3rem 因为有3LI所以是3/3=1rem 一共是3rem*/
+			padding:1rem;
+			background-color: green;
+			height: 100px;
+			display: inline-block;
+			text-align: center;
+			box-sizing:border-box;
+		}
+		li+li{
+			margin-left:1.5rem;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li><li>2</li><li>3</li>	
+	</ul>
+</body>
+</html>
