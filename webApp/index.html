@@ -43,7 +43,7 @@
 			<button class="font-size-button spe-button" id="large-font">大</button>
 			<button class="font-size-button spe-button" id="small-font">小</button>
 		</div>
-		<div class="child-mod child-mod-bk">
+		<div class="child-mod child-mod-bk" id="bk-container">
 			<span>背景</span>
 			<div class="bk-container">
 				<div class="bk-container-current"></div>
@@ -76,7 +76,7 @@
 					<p>字体</p>
 				</a>
 			</li>
-			<li>
+			<li id="night-button">
 				<a href="#">
 					<span class="icon-img3"></span>
 					<p>夜间</p>
@@ -110,7 +110,9 @@
 			top_nav:$('#top_nav'),
 			bottom_nav:$('#bottom_nav'),
 			font_button:$('#font-button'),
-			font_container:$('#font-container')
+			font_container:$('#font-container'),
+			bk_container:$('#bk-container'),
+			night_button:$('#night-button')
 		}
 		win = $(window);
 		doc = $(document); 
@@ -119,10 +121,16 @@
 		if(!initFontSize){
 			initFontSize = 14;
 		}
+		//是否是夜间模式
+			var NightMode = false;
 		$('#fiction_container').css("font-size",initFontSize);
 		function main(){
+
+			
+
 			//整个项目的入口函数
 			EventHander();
+
 		}
 
 		function ReaderModel(){
@@ -158,6 +166,53 @@
 					DOM.font_button.find('span').removeClass("cur");
 				}
 			})
+			// 夜间模式按钮点击
+			DOM.night_button.click(function(){
+				if(NightMode){
+					$('#day_icon').show();
+					$('#night_icon').hide();
+					$('#bottom_tool_bar_ul').css('opacity', '0.6');
+					NightMode = false;
+				}else{
+					$('#day_icon').show();
+					$('#night_icon').hide();
+					$('#bottom_tool_bar_ul').css('opacity', '0.6');
+					NightMode = true;
+				}
+			})
+			//背景切换 （delegate是给后面.bk-container绑定一个或者多个事件，也包括后面添加的.bk-container）
+			DOM.bk_container.delegate('.bk-container','click',function(){   
+				var color = $(this).data('color');  //字体颜色
+				var font = $(this).data('font');	//暂时不知道。
+				var bottomcolor = $(this).data('bottomcolor'); //暂时用于 上一页，下一页按钮样式
+				var tool_bar = font;
+				DOM.bk_container.find('.bk-container-current').hide();
+				$(this).find('.bk-container-current').show();
+
+				$('body').css('background',color);		 //整个body的背景颜色
+				$('.m-read-content').css('color',font);  //正文的字体颜色
+
+				//把tool_bar,bottomcolor,color.font存入localStorage
+				Util.StorageSetter('toolbar_background',tool_bar);
+				Util.StorageSetter('bottom_color',bottomcolor);
+				Util.StorageSetter('background_color',color);
+				Util.StorageSetter('font_color',font);
+
+				//夜间模式
+				var fontColor = Util.StorageGetter('font_color');
+				if(fontColor == '#4e534f'){  //变成白天模式
+					NightMode = true;		//上面有设置NightMode=false;
+					$('#day_icon').show();
+					$('#night_icon').hide();
+					$('#bottom_tool_bar_ul').css('opacity', '0.6');
+				}else{
+					NightMode = false;
+					$('#day_icon').hide();
+					$('#night_icon').show();
+					$('#bottom_tool_bar_ul').css('opacity', '0.6');
+				}
+			})
+
 
 			//按钮的多态样式效果
 			$('.spe-button').on('touchstart', function() {
