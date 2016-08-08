@@ -479,7 +479,7 @@ li {
 }
 
 .text-hide {     /*文字隐藏*/
-    font: 0/0 a;
+    font: 0/0;
     color: transparent;
     text-shadow: none;
     background-color: transparent;
