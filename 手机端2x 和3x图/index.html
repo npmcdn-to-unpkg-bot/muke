@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机端2x和3x背景图</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="apple-touch-fullscreen" content="yes" /> 
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	</head>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-image: url(1.png);
+			overflow: hidden;
+			background-size: 300px 300px;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			border:1px solid #e5e5e5;
+			margin: 10px auto;
+
+		}
+		 @media only screen and (-webkit-min-device-pixel-ratio: 2.5),
+		  	only screen and (min--moz-device-pixel-ratio: 2.5),
+		  	only screen and (-o-min-device-pixel-ratio: 5/2),
+		  	only screen and (min-device-pixel-ratio: 2.5),
+		  	only screen and (min-resolution: 240dpi),
+		  	only screen and (min-resolution: 2.5dppx) {
+		    div{
+		      background-image: url(2.png) !important;
+		    }
+		  }
+		  /*但是不太推荐使用雪碧图 因为lib-flexible会导致大部分的设备下position和size都是小数数值，所以很难保证背景图片缩放后还能
+		  通过position显示到正确的位置：*/
+
+
+		  /**********
+		  直接使用背景
+		  *********/
+			.retina-image(@background-image) {
+			  background-image: url("../img/@2x/@{background-image}?v=@@version");
+			  background-size: 100% 100%;
+			  background-position:left top;}
+
+			  @media only screen and (-webkit-min-device-pixel-ratio: 2.5),
+			  only screen and (min--moz-device-pixel-ratio: 2.5), 
+			  only screen and (-o-min-device-pixel-ratio: 5/2),
+			  only screen and (min-device-pixel-ratio: 2.5),
+			  only screen and (min-resolution: 240dpi),
+			  only screen and (min-resolution: 2.5dppx) {
+			    & {
+			      background-image: url("../img/@3x/@{background-image}?v=@@version") !important;
+			    }
+			  }
+			  //1dppx = 1devicePixelRatio, 1dppx = 96dpi.
+			}
+
+
+
+		 /* *********
+		  *******/
+	</style>
+<body>
+	<div></div>
+</body>
+</html>
