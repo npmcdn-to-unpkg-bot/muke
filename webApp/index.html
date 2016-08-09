@@ -122,8 +122,47 @@
 			initFontSize = 14;
 		}
 		//是否是夜间模式
-			var NightMode = false;
+		var NightMode = false;
 		$('#fiction_container').css("font-size",initFontSize);
+		//从缓存中读取信息进行展示
+		var ModuleFontSwitch = function(){
+			//字体和颜色表
+			var colorArr = [{
+				value : '#f7eee5',
+				name : '米白',
+				font : ''
+			},{
+				value : '#e9dfc7',
+				name : '纸张',
+				font : ''
+			},{
+				value : '#a4a4a4',
+				name : '浅灰',
+				font : ''
+			},{
+				value : '#cdefce',
+				name : '护眼',
+				font : ''
+			},{
+				value : '#283548',
+				name : '灰蓝',
+				font : '#7685a2',
+				bottomcolor : '#fff'
+			},{
+				value : '#0f1410',
+				name : '夜间',
+				font : '#4e534f',
+				bottomcolor : 'rgba(255,255,255,0.7)',
+				id : "font_night"
+			}]
+		}
+
+		var tool_bar = StorageGetter('toolbar_background_color');
+
+
+
+      
+
 		function main(){
 
 			
@@ -143,7 +182,7 @@
 		}
 
 		function EventHander(){
-			//交互时间的绑定
+			//交互事件的绑定
 			$('#action_mid').click(function(){    //上下边栏出现效果
 				if(DOM.top_nav.css("display") == "none"){
 					DOM.top_nav.show();
@@ -169,13 +208,13 @@
 			// 夜间模式按钮点击
 			DOM.night_button.click(function(){
 				if(NightMode){
-					$('#day_icon').show();
-					$('#night_icon').hide();
+					DOM.night_button.find('span').addClass('cur');
+					DOM.night_button.find('p').text("白天");
 					$('#bottom_tool_bar_ul').css('opacity', '0.6');
 					NightMode = false;
 				}else{
-					$('#day_icon').show();
-					$('#night_icon').hide();
+					DOM.night_button.find('span').removeClass('cur');
+					DOM.night_button.find('p').text("夜间");
 					$('#bottom_tool_bar_ul').css('opacity', '0.6');
 					NightMode = true;
 				}
@@ -193,7 +232,7 @@
 				$('.m-read-content').css('color',font);  //正文的字体颜色
 
 				//把tool_bar,bottomcolor,color.font存入localStorage
-				Util.StorageSetter('toolbar_background',tool_bar);
+				Util.StorageSetter('toolbar_background_color',tool_bar);
 				Util.StorageSetter('bottom_color',bottomcolor);
 				Util.StorageSetter('background_color',color);
 				Util.StorageSetter('font_color',font);
@@ -202,13 +241,13 @@
 				var fontColor = Util.StorageGetter('font_color');
 				if(fontColor == '#4e534f'){  //变成白天模式
 					NightMode = true;		//上面有设置NightMode=false;
-					$('#day_icon').show();
-					$('#night_icon').hide();
+					DOM.night_button.find('span').addClass('cur');
+					DOM.night_button.find('p').text("白天");
 					$('#bottom_tool_bar_ul').css('opacity', '0.6');
 				}else{
 					NightMode = false;
-					$('#day_icon').hide();
-					$('#night_icon').show();
+					DOM.night_button.find('span').removeClass('cur');
+					DOM.night_button.find('p').text("夜间");
 					$('#bottom_tool_bar_ul').css('opacity', '0.6');
 				}
 			})
