@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable"> <!--  /*允许web成为web app 放置在桌面*/ -->
+	<meta content="yes" name="app-touch-fullscreen"> <!-- 全屏浏览 -->
+	<meta content="telphone=no,email=no" name="format-detection">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<!-- <link rel="app-touch-icon" href="favicon.icon">  -->    	<!-- 在手机桌面的小图片 -->         	
+	<link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">  <!-- 在手机桌面的小图片 -->
+	<link rel="stylesheet" href="jquery-weui.css">
+	<link rel="stylesheet" href="weui.css">
+	<title>jqueryWEUI-demo</title>
+	<style type="text/css">
+		.wrap-bj{height: 232px;background: url(header-bj.png) no-repeat;background-size: cover;background-repeat: center;}
+		.header{width: 100%;padding:0 10px;height: 45px;line-height: 45px;text-align: right;position: relative;box-sizing:border-box;}
+		.icon-back{display: inline-block;-webkit-transform:rotate(45deg);transform:rotate(45deg);height: 11px;width: 11px;border-width:0px 0px 2px 2px;border-color:#fff;border-style:solid;position: absolute;top: 10px;left: 10px;}
+		.header a{font-size: 15px;color: #fff;text-decoration: none;}
+		.login-box{display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:25px 10px;}
+		.login-header{width: 60px;height: 60px;border-radius: 100px;margin-right: 10px;}
+		.login-header img{max-width: 100%;width: 100%;height: 100%;}
+		.login-name{-webkit-box-flex:1;-webkit-flex:1;flex:1;color:#fff;}
+		.open{text-align: right;}
+		.open a{display: inline-block;padding:7px 15px;border:1px solid #fff;border-radius: 5px;font-size: 14px;color:#fff;}
+		.header-nav{display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:15px 10px 13px;background: rgba(14,58,139,0.4);}
+		.nav-list{-webkit-box-flex:1;-webkit-flex:1;flex:1;color:#fff;text-align: center;font-size: 15px;position: relative;}
+		.nav-list + .nav-list:after{position: absolute;content: '';left: 0px;width: 0;height: 25px;border-right: 1px solid #4a629e;display: block;top: 5px;}
+		.nav-list .p2{opacity: .5;font-size: 14px;}
+	</style>
+</head>
+<body>
+	<div class="wrap-bj">
+		<div class="header">
+			<div class="icon-back"></div>
+			<a href="">设置</a>
+		</div>
+		<div class="login-box">
+			<div class="login-header"><img src="login-header.png" alt=""></div>
+			<div class="login-name">用户名用户名</div>
+			<div class="open"><a href="#">申请开店</a></div>
+		</div>
+		<div class="header-nav">
+			<div class="nav-list">
+				<p>待付款</p>
+				<p class="p2">5</p>
+			</div>
+			<div class="nav-list">
+				<p>待付款</p>
+				<p class="p2">5</p>
+			</div>
+			<div class="nav-list">
+				<p>待付款</p>
+				<p class="p2">5</p>
+			</div>
+			<div class="nav-list">
+				<p>待付款</p>
+				<p class="p2">5</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+<script type="text/javascript" src="jquery-weui.js"></script>
+</html>
