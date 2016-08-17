@@ -220,6 +220,19 @@
 		function ReaderModel(){
 			//实现和阅读器相关的数据交互的方法
 
+			//获取章节信息
+			var getFictionInfo = function(){    
+				$.get('/json/chapter.json',function(){
+					//获取章节信息的回调
+				},'json');
+			}
+			//获得章节的内容
+			var getCurChapterContent = function(chapter_id){
+				$.get('/json/data' + chapter_id + '.json',function(){
+					
+				},'json')
+			}
+
 		}
 
 		function ReaderBaseFrame(){
