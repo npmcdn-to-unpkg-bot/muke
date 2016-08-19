@@ -1,0 +1,330 @@
+header{width: 100%;}
+a{text-decoration: none;}
+body{background-color: #f7f7f7;}
+.header-top{
+	line-height: 3rem;
+	color: #fff;
+	background: #555;
+	border-bottom:1px solid #ecc000;
+	padding:0 1.5rem;
+	height: 3rem;
+}
+.header-top .tel{float: left;color: #fff;}
+.header-top ul{text-align: right;font-size: 0;}
+.header-top ul li{
+	display:inline-block;
+	font-size: 1.2rem;
+}
+.header-top ul li a{
+	display: inline-block;
+	color: #fff;
+	padding:0 2.0rem;
+}
+.header-top ul li+li{
+	border-left: 1px solid #ecc000;
+}
+.header-main{background: #f7f7f7;}
+.logo{
+	float: left;
+	padding:1rem 0 0 0.9rem;
+}
+.logo img{vertical-align: middle;}
+.header-main ul{text-align: right;}
+.header-main ul li{display: inline-block;}
+.header-main ul li a{
+	display: inline-block;
+	padding:0 2.5rem;
+	font-size: 1.6rem;
+	line-height: 5.5rem;
+	font-weight: bold;
+	color: #7c7a65;
+}
+.header-main ul li{
+	border-left: 1px solid #eee;
+}
+.transtion{width: 100%;background: #7c7365;}
+.transtion .trans-content{
+	max-width: 90%;
+	margin:0 auto;
+}
+.trans-data{
+	font-size: 1.4rem;
+	float: left;
+	line-height: 6.0rem;
+	color: #fff;
+	margin-right: 2.0rem;
+}
+.trans-data .trans-money{
+	color: #ff6600;
+	padding:0.7rem 1.0rem;
+	background:rgba(255,255,255,0.9);
+	box-shadow: 1px 2px 1px #333 inset;
+	margin:0 1rem;
+	border-radius: 5px;
+	letter-spacing: 3px;
+	font-size: 2.2rem;
+}
+.trans-report{
+	float: right;
+	line-height: 6.0rem;
+}
+.trans-report a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.4rem;
+}
+.trans-report a:hover{
+	text-decoration: underline;
+}
+.feature{
+	width: 90%;
+	margin:2.0rem auto;
+}
+.feature .item{
+	float: left;
+	width: calc(33.33333333% - 1rem);
+	box-sizing:border-box;
+	border:1px solid #e5e5e5;
+	padding:1.0rem 1.0rem;
+}
+.feature .item +.item{
+	margin-left: 1.5rem;
+}
+.feature .item h3{
+	width: 35%;
+	text-align: center;
+	color: #ff6600;
+	font-size: 3.3rem;
+	vertical-align: top;
+	display: inline-block;
+	padding:0;
+	margin:0;
+}
+.feature .item p{
+	width: 50%;
+	text-align: left;
+	color: #999;
+	line-height: 24px;
+	font-size: 1.4rem;
+	display: inline-block;
+	margin:0;
+	padding:0;
+}
+.notice{
+	max-width: 90%;
+	margin:1.0rem auto;
+	border:1px solid #e5e5e5;
+	padding-left: 1.0rem;
+	height: 2.5rem;
+	box-sizing: border-box;
+}
+.notice a:first-child{
+	display: inline-block;
+	width: 70%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	white-space: nowrap;
+	line-height: 2.5rem;
+	color: #999;
+}
+.notice a span{margin-right: 1.0rem;}
+.notice a:first-child:before{
+	content: '最新公告：';
+	margin-right: .7rem;
+	color: #999;
+}
+.notice .more{
+	width: auto;
+	float: right;
+	line-height: 2.5rem;
+	margin-right: 1.0rem;
+}
+.product{
+	max-width: 90%;
+	margin:2.0rem auto;
+	border:1px solid #e5e5e5;
+	border-top: 2px solid #ff6600;
+	background: #f5f9fa;
+}
+.product h2{
+	width: 25%;
+	text-align: center;
+	padding-top:2.0rem;
+	float: left;
+	font-size: 2.2rem;
+	margin:0;
+}
+.product h2 em{
+	margin-top: 1.0rem;
+	display: block;
+	color: #666;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+.product h2 em:first-child{
+	margin-top: 3.0rem;
+}
+.product-list{
+	float: right;
+	width: 74%;
+	border-left: 1px solid #e5e5e5;
+	background: #fff;
+}
+.product-list .item{
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+}
+.product-list .item:last-child{
+	border-bottom: none;
+}
+.product-list .item h3{
+	width: 30%;
+	float: left;
+	box-sizing:border-box;
+	text-align: center;
+	margin:0;
+	padding:0;
+	padding: 2rem 0 0;
+} 
+.product-list .item h3 em{
+	color: #666;
+	font-size: 3.6rem;
+	margin-right: 0.5rem;
+	margin-top: -1.0rem;
+}
+.product-list .item .info{
+	float: left;
+	width: 50%;
+	box-sizing:border-box;
+	font-size: 0;
+	border-right: 1px solid #e5e5e5;
+	border-left: 1px solid #e5e5e5;
+}
+.product-list .item .info p{
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+	font-size: 1.4rem;
+	padding:1.5rem;
+	box-sizing:border-box;
+}
+.product-list .item .info p span{
+	display: block;
+
+}
+.product-list .item .info p .year-rate{
+	color: #ff6600;
+	font-size: 2.4rem;
+}
+.product-list .item .info p .year-rate i{
+		font-size: 1.4rem;
+		color: #333;
+		margin-left: 1.0rem;
+}
+.product-list .item .buy{
+	float: left;
+	width: 20%;
+	box-sizing:border-box;
+	overflow: hidden;
+}
+.product-list .item .buy .buy-btn{
+	width: 80%;
+	max-width: 80%;
+	border-radius: 5px;
+	background: #ff6600;
+	line-height: 4rem;
+	color: #fff;
+	font-size: 1.4rem;
+	margin: 3rem auto 0;
+	text-align: center;
+	cursor: pointer;
+}
+.footer{
+	width: 100%;
+	border-top: 1px solid #e5e5e5;
+	background: #fff;
+	margin-top: 2.0rem;
+	margin-bottom: 3.0rem;
+	padding:3rem 0;
+}
+.footer .footer-wrap{
+	max-width: 90%;
+	margin:0 auto;
+}
+.logo2{
+	float: left;
+	width: 20%;
+	background: url(../image/logo@1x.png) no-repeat;
+	height: 35px;
+	background-size:150px 35px;
+	-webkit-filter:grayscale(100%);
+	filter:grayscale(100%);
+}
+.footer .footer-wrap ul{
+	float: left;
+	width: 15%;
+	text-align: left;
+}
+.footer .footer-wrap ul li.title{
+	font-size: 1.6rem;
+	line-height: 3rem;
+}
+.footer .footer-wrap ul li.title a{color: #666;}
+.footer .footer-wrap ul li{
+	font-size: 1.2rem;
+	line-height: 2rem;
+}
+.footer .footer-wrap ul li a{
+	color: #999;
+}
+.footNav{
+	width: 100%;
+	padding:2.0rem 0;
+	text-align: center;
+	background: #ededed;
+}
+.footNav ul li{
+	display: inline-block;
+	background: url(../image/cert1.png) no-repeat;
+	background-size: 466px 447px;
+	overflow: hidden;
+	margin-right: 1rem;
+}
+.footNav ul li.icon1{
+	width: 38px;
+	height: 26px;
+	background-position: -369px -45px;
+}
+.footNav ul li.icon2{
+	width: 78px;
+	height: 27px;
+	background-position: -110px -96px;
+}
+.footNav ul li.icon3{
+	width: 63px;
+	height: 27px;
+	background-position: -401px -187px;
+}
+.footNav ul li.icon4{
+	width: 36px;
+    height: 27px;
+    background-position: -426px -90px;
+}
+.footNav ul li.icon5{
+	width: 22px;
+    height: 27px;
+    background-position: -48px -48px;
+}
+.footNav ul li.icon6{
+	width: 75px;
+    height: 27px;
+    background-position: 0 -320px;
+}
+.footNav ul li.icon7{
+	width: 30px;
+    height: 30px;
+    background: url(../image/cert2.png) no-repeat;
+    margin-right: 0;
+    background-size: 30px;
+}
